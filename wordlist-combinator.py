@@ -3,14 +3,21 @@ import sys
 import itertools
 import argparse
 
-parser = argparse.ArgumentParser(description='Combines a list of words in a list of combined words with separators')
+parser = argparse.ArgumentParser(description='Combines a list of words in a list of combined words with separators. \
+        Example: wordlist-combinator.py -min 2 -max 4 -s \"_-.\" -o merged.lst example.lst')
 parser.add_argument('-min', '--min-words', type=int, help='Minimum words to combine together. Default is 3', nargs='?', default=3)
 parser.add_argument('-max', '--max-words', type=int, help='Maximum words to combine together. Default is 3', nargs='?', default=3)
-parser.add_argument('-s', '--separators', metavar='N', type=str, nargs='?', help='Separators between combined words. Default is \"-_\". Empty separator is always included.', default=["-","_"])
+parser.add_argument('-s', '--separators', metavar='N', type=str, nargs='?', help='Separators between combined words. Default is \"-_\". Empty separator is always included. Example: \"_-.,\"', default=["-","_"])
 parser.add_argument('-o', '--output-file', type=str, help='Outputs to a file in addition to stdout', nargs='?')
 parser.add_argument('file')
 args = parser.parse_args()
 
+if args.min_words < 2:
+    print("Minimum words shall be greater or equals to 2.")
+    quit()
+if args.min_words > args.max_words:
+    print("Maximum words shall be greater or equal to minimum words.")
+    quit()
 
 # Open dictionary file
 words = []
