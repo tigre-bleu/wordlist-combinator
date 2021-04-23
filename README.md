@@ -7,9 +7,9 @@ The tool will create all possible permutations of N words (N varying between a c
 # Usage
 
 ```
-usage: wordlist-combinator.py [-h] [-min [MIN_WORDS]] [-max [MAX_WORDS]] [-s [N]] file
+usage: wordlist-combinator.py [-h] [-min [MIN_WORDS]] [-max [MAX_WORDS]] [-s [N]] [-o [OUTPUT_FILE]] file
 
-Combine a list of words in a list of combined words with separators
+Combines a list of words in a list of combined words with separators
 
 positional arguments:
   file
@@ -22,5 +22,6 @@ optional arguments:
                         Maximum words to combine together. Default is 3
   -s [N], --separators [N]
                         Separators between combined words. Default is "-_". Empty separator is always included.
-
+  -o [OUTPUT_FILE], --output-file [OUTPUT_FILE]
+                        Outputs to a file in addition to stdout
 ```
