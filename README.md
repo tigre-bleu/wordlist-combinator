@@ -2,7 +2,7 @@
 
 Simple tool to merge different words into a single one with customized separators. This tool was designed to build password candidates from a dictionnary of words that could be part of the password.
 
-The tool can work in twi ways:
+The tool can work in two ways:
 
 **A single file is provided as parameter:**
 
